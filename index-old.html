@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обо мне</title><style>body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+background: #bcb2c6;
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+h1 {color: #dc2626; margin-bottom: 8px; }
+h2 { color: #334155; margin-top: 24px; margin-bottom: 12px; }
+p, li { color: #475569; line-height: 1.6; }
+a { color: #2563eb; text-decoration: none; font-weight: 500; }
+a:hover { text-decoration: underline; }
+ul { padding-left: 20px; }@media (max-width: 500px) {
+    body { padding: 20px 10px; }
+    main { padding: 20px; border-radius: 12px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 20px; }
+    img { height: 150px; }
+    ul { padding-left: 16px; }
+}</style>
+</head>
+<body>
+    <header>
+        <h1>Матвей Кенибаев</h1>
+        <p>Начинающий веб-разработчик</p>
+    </header>
+
+    <main>
+        <img src="https://picsum.photos/300/200" alt="Моё фото или тематическая картинка">
+        <h2>Обо мне</h2>
+        <p>Я учусь создавать сайты с нуля. Пока знаю только основы, но уже умею открывать файлы в браузере и не боюсь ошибок.</p>
+
+        <h2>Мои цели</h2>
+        <ul>
+            <li>Сделать первый сайт-портфолио</li>
+            <li>Научиться работать с JavaScript</li>
+            <li>Получить первый заказ</li>
+            <li>Освоить Git и выложить проект в интернет</li>
+        </ul>
+
+        <h2>Ссылки</h2>
+        <p>Мой <a href="https://github.com" target="_blank">GitHub</a> | <a href="mailto:email@example.com">Написать мне</a></p>
+    <button id="action-btn">Нажми меня</button></main>
+    <script>
+    const btn = document.getElementById('action-btn');
+    
+    // Проверяем, кликали ли раньше
+    const wasClicked = localStorage.getItem('btnState') === 'clicked';
+    if (wasClicked) {
+        btn.textContent = 'Работает! 🚀';
+        btn.style.background = '#10b981';
+        btn.style.transform = 'scale(1.05)';
+    }
+
+    btn.addEventListener('click', () => {
+        btn.textContent = 'Работает! 🚀';
+        btn.style.background = '#10b981';
+        btn.style.transform = 'scale(1.05)';
+        // Запоминаем состояние
+        localStorage.setItem('btnState', 'clicked');
+    });
+</script>
+</body>
+</html>
